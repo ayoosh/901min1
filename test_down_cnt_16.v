@@ -4,7 +4,7 @@ reg rst, clk, wr_en;
 reg [15:0]in;
 wire zero;
 
-downcounter_16 dcnt_16(rst, clk, wr_en, in, zero);
+downcounter_16 dcnt_16(rst, clk, wr_en, in, r_enable, t_enable);
 
 initial begin
 	rst = 1;
@@ -19,9 +19,9 @@ always
 #1 clk = ~clk;
 
 initial
-	#100 $stop;
+	#1000 $stop;
 
 initial
-	$monitor ($time, zero);
+	$monitor ($time, r_enable, t_enable);
 
 endmodule
