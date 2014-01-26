@@ -13,13 +13,15 @@ always@(posedge clk) begin
 	if (rst) begin
 		shift_reg <= 0;
 		r_enable <= 0;
+		t_enable <= 0;
 		rdy <= 1'b0;
-		count <= 4'b0;
+		count <= 5'b00000;
 	end
 
 	else begin
 		if (wr_en) begin
 			shift_reg <= in;
+			count <= 0;
 			rdy <= 1'b1;
 		end
 
@@ -27,11 +29,8 @@ always@(posedge clk) begin
 			if(rdy) begin
 				if (shift_reg == 0) begin
 					r_enable <= 1'b1;
-					if(count < 5'10001) begin
-						count <= count + 1;
-						t_enable <= 1'b0;
-					end
-					else begin
+					count <= count + 1;
+					if(count == 5'b01111) begin
 						count <= 0;
 						t_enable <= 1'b1;
 					end
@@ -40,10 +39,12 @@ always@(posedge clk) begin
 				else begin
 					shift_reg <= shift_reg - 1;
 					r_enable <= 0;
+					t_enable <= 0;
 				end
 			end
 			else begin
-				shift_reg <=0;
+				t_enable <= 1'b0;
+				shift_reg <= 1'b0;
 				r_enable <= 1'b0;
 			end
 		end

@@ -19,7 +19,7 @@ always
 #1 clk = ~clk;
 
 initial
-	#1000 $stop;
+	#1500 $stop;
 
 initial
 	$monitor ($time, r_enable, t_enable);
