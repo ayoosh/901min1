@@ -1,0 +1,11 @@
+vsim -gui work.t_down_cnt_16
+add wave -position insertpoint  \
+sim:/t_down_cnt_16/rst \
+sim:/t_down_cnt_16/clk \
+sim:/t_down_cnt_16/wr_en \
+sim:/t_down_cnt_16/in \
+sim:/t_down_cnt_16/zero \
+sim:/t_down_cnt_16/r_enable \
+sim:/t_down_cnt_16/t_enable
+
+run -all
