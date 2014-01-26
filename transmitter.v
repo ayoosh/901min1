@@ -19,7 +19,7 @@ always@(posedge clk) begin
 		t_count <= 0;
 		t_busy <= 0;
 	end
-	else if(baud_enable && t_busy) begin // xxx does not needs t_busy
+	else if(baud_enable && t_busy) begin
 		for(i=0 ; i < 4'b1000; i=i+1)
 			t_shift_reg[i] <= t_shift_reg[i+1];
 		t_shift_reg[9] <= 1'b1;

@@ -1,18 +1,20 @@
 // wr_en : goes high once the baud rate generator register is loaded with appropriate value and goes low in next cycle
 
-module downcounter_16(rst, clk, wr_en, in, zero);
+module downcounter_16(rst, clk, wr_en, in, r_enable, t_enable);
 input rst, clk, wr_en;
 input [15:0]in;
-output reg zero;
+output reg r_enable, t_enable;
 
 reg rdy;
 reg [15:0]shift_reg;
+reg [4:0]count;
 
 always@(posedge clk) begin
 	if (rst) begin
 		shift_reg <= 0;
-		zero <= 0;
+		r_enable <= 0;
 		rdy <= 1'b0;
+		count <= 4'b0;
 	end
 
 	else begin
@@ -24,17 +26,25 @@ always@(posedge clk) begin
 		else begin
 			if(rdy) begin
 				if (shift_reg == 0) begin
-					zero <= 1'b1;
+					r_enable <= 1'b1;
+					if(count < 5'10001) begin
+						count <= count + 1;
+						t_enable <= 1'b0;
+					end
+					else begin
+						count <= 0;
+						t_enable <= 1'b1;
+					end
 					shift_reg <= in;
 				end
 				else begin
 					shift_reg <= shift_reg - 1;
-					zero <= 0;
+					r_enable <= 0;
 				end
 			end
 			else begin
 				shift_reg <=0;
-				zero <= 1'b0;
+				r_enable <= 1'b0;
 			end
 		end
 	end
