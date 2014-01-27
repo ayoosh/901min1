@@ -4,7 +4,7 @@
 // 1st bit of shift register is always start bit
 // Bits 9:2 are data bits
 
-module transmitter(input clk, input reset,input baud_t_enable, input data_t_enable, input [7:0]data, output txd, output tbr);
+module transmitter(input clk, input rst,input baud_t_enable, input data_t_enable, input [7:0]data, output txd, output tbr);
 
 reg t_busy; 
 reg [3:0]i;
