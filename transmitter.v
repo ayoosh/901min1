@@ -4,7 +4,7 @@
 // 1st bit of shift register is always start bit
 // Bits 9:2 are data bits
 
-module transmitter(input rst, input clk, input baud_enable, input t_enable, input [7:0]data, output txd, output tbr);
+module transmitter(input clk, input reset,input baud_t_enable, input data_t_enable, input [7:0]data, output txd, output tbr);
 
 reg t_busy; 
 reg [3:0]i;
@@ -19,7 +19,7 @@ always@(posedge clk) begin
 		t_count <= 0;
 		t_busy <= 0;
 	end
-	else if(baud_enable && t_busy) begin
+	else if(baud_t_enable && t_busy) begin
 		for(i=0 ; i < 4'b1001; i=i+1)
 			t_shift_reg[i] <= t_shift_reg[i+1];
 		t_shift_reg[9] <= 1'b1;
@@ -27,7 +27,7 @@ always@(posedge clk) begin
 		if(t_count == 0)
 			t_busy <= 1'b0;
 	end
-	else if(t_enable)begin
+	else if(data_t_enable)begin
 		t_shift_reg[9:2] <= data[7:0];
 		t_shift_reg[1] <= 1'b0;
 		t_busy <=1'b1;		
