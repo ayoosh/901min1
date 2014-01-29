@@ -13,16 +13,21 @@ initial begin
 	baud_write = 0;
 	rst = 1;
 	clk = 1;
-	#10 rst = 0;
-	#0 data_in = 8'b10101010;
-	#2 baud_write = 1;
+	#4 rst = 0;
+	#0 baud_write = 1;
+	#4 data_in = 8'b10101010;
 	#0 io_addr = 2'b10;
+	#4 data_in = 8'b01010000;
+	#0 io_addr = 2'b11;
+	#2 baud_write = 0;
+	#4 rst = 1;
+	#4 rst = 0;
+	#4 io_addr = 2'b10;
+	#0 baud_write = 1;
+	#0 data_in = 8'b00001111;
 	#2 data_in = 8'b01010000;
 	#0 io_addr = 2'b11;
-	#4 io_addr = 2'b10;
-	#2 rst = 1;
-	#4 rst = 0;
-	#8 data_in = 8'b00001111;
+	#2 baud_write = 0;
 end
 
 always
