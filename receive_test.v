@@ -19,7 +19,7 @@ always
 #1 clk = ~clk;
 
 terminal t(.clk(clk), .rst(rst), .data(data));
-spart (.clk(clk), .rst(rst), .iocs(iocs), .iorw(iorw),.rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus), .txd(tr), .rxd(data));
-driver1 (.clk(clk), .rst(rst), .br_cfg(baud), .iocs(iocs),.iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus));
+spart s(.clk(clk), .rst(rst), .iocs(iocs), .iorw(iorw),.rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus), .txd(tr), .rxd(data));
+driver1 p(.clk(clk), .rst(rst), .br_cfg(baud), .iocs(iocs),.iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus));
 
 endmodule  

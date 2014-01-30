@@ -1,6 +1,6 @@
 module terminal(input clk, input rst, output data);
 
-reg [9:0]data_send;
+reg [11:0]data_send;
 reg [15:0]baud_counter;
 reg [3:0]data_counter;
 reg [3:0]i;
@@ -9,7 +9,7 @@ assign data = data_send[0];
 
 always@(posedge clk)begin
 	if(rst)begin
-		data_send <= 10'h14A;
+		data_send <= 12'hAAB; // 1010 1010 1011
 		baud_counter <= 16'h0516;
 		data_counter <= 4'b1100;
 	end
