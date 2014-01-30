@@ -1,7 +1,5 @@
-module receiver(input clk, input rst, input r_enable, input rxd, input rec_enable, output [7:0]data, output rda);
+module receiver(input clk, input rst, input r_enable, input rxd, input rec_enable, output reg [7:0]data, output reg rda);
 
-	reg [7:0]data;
-	reg rda;
 	reg [3:0]i;
 	reg [3:0]zcnt;
 	reg start; // have we detected the start bit
@@ -71,7 +69,7 @@ module receiver(input clk, input rst, input r_enable, input rxd, input rec_enabl
 				if (bitcnt == 3'b111) begin	
 			
 			
-			
+				end
 			end			
 		end
 	end
