@@ -35,6 +35,7 @@ transmitter t1(.clk(clk), .rst(rst),.baud_t_enable(trans_enable), .data_t_enable
 //receiver module comes here
 
 assign divisor_enable = (iocs) ? ~iorw : 1'b0;
-assign d_enable = (iocs && ioaddr == 2'b00) ? 1'b1 : 1'b0;  
+assign d_enable = (iocs && ioaddr == 2'b00 && iorw == 0) ? 1'b1 : 1'b0;
+assign rec_enable = (iocs && ioaddr == 2'b00 && iorw == 1) ? 1'b1 : 1'b0;
 
 endmodule
