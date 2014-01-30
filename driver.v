@@ -21,7 +21,7 @@
 module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output reg iorw, input rda, input tbr, output reg [1:0] ioaddr, inout [7:0] databus);
 
 reg [7:0]data;
-assign databus = (1)? data : 8'hxx;
+assign databus = (iorw == 1'b0)? data : 8'hzz;
 reg baud_done;
 reg [7:0]i;
 reg flag;
