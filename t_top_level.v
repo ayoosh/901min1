@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 5ns/1ps
 
 module t_top;
 reg rst, clk;
@@ -15,7 +15,7 @@ top_level top (
 initial begin
 	rst = 1;
 	clk = 1;
-	br_cfg = 2'b00;
+	br_cfg = 2'b11;
 	#4 rst = 0;
 end
 
@@ -23,6 +23,7 @@ always
 #1 clk = ~clk;
 
 initial 
+
 #5000000 $stop;
 
 initial
