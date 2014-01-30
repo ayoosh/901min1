@@ -21,6 +21,7 @@
 module spart( input clk, input rst, input iocs, input iorw, output rda, output tbr, input [1:0]ioaddr, inout [7:0]databus, output txd, input rxd);
 
 wire [7:0]bus;
+wire [15:0]bus1;
 wire trans_enable;
 wire rec_enable;
 wire divisor_enable;
