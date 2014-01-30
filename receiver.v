@@ -4,7 +4,7 @@ module receiver(input clk, input rst, input r_enable, input rxd, input rec_enabl
 	reg [3:0]zcnt;
 	reg start; // have we detected the start bit
 	reg misery;
-	reg [2:0]bitcnt;
+	reg [3:0]bitcnt;
 	reg receive_sig;
 
 	always@(posedge clk) begin
@@ -20,12 +20,12 @@ module receiver(input clk, input rst, input r_enable, input rxd, input rec_enabl
 			misery <= 0;
 		end
 
-		else if (r_enable) begin
+		else if (r_enable && bitcnt < 4'h8) begin
 			if (start == 0 && receive_sig == 1) begin // Sanity check only to bypass idle condition
 			end
 			else if (start == 0) begin // First worry about start bit
 				if (receive_sig == 0 && misery == 0) begin
-					misery <= 1;
+					misery <= 1; // We hae started sampling for the start bit now
 					zcnt <= zcnt + 1;
 					i <= i - 1;
 				end
@@ -48,7 +48,7 @@ module receiver(input clk, input rst, input r_enable, input rxd, input rec_enabl
 			end
 
 			else if (start == 1) begin
-				if (i == 0) begin
+				if (i == 0 && bitcnt < 4'h8) begin
 					if (zcnt > 4'd8) begin
 						data[bitcnt] <= 0;
 					end
@@ -65,12 +65,19 @@ module receiver(input clk, input rst, input r_enable, input rxd, input rec_enabl
 						zcnt <= zcnt + 1;
 					end
 				end
-				
-				if (bitcnt == 3'b111) begin	
-			
-			
-				end
 			end			
+		end
+
+		if (rec_enable == 1) begin
+			rda <= 0;
+			i <= 4'b1111;
+			zcnt <= 0;
+			start <= 0;
+			bitcnt <= 0;
+			misery <= 0;
+		end
+		else if (bitcnt == 4'h8) begin	
+			rda <= 1;		
 		end
 	end
 endmodule
