@@ -1,4 +1,4 @@
-`timescale 5ns/1ps
+`timescale 1ns/1ps
 
 module t_top;
 reg rst, clk;
