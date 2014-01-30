@@ -28,13 +28,14 @@ wire divisor_enable;
 wire rdy;
 wire d_enable;
 
-assign bus = (1'b1) ? databus : 8'hzz;
+assign rec = (iocs && ioaddr == 2'b00 && iorw == 1'b1) ? 1'b1 : 1'b0;
+assign bus = (iorw == 1'b1) ? databus : 8'hzz;
+assign divisor_enable = (iocs && (ioaddr == 2'b10 || ioaddr == 2'b11)) ? ~iorw : 1'b0;
+assign d_enable = (iocs && ioaddr == 2'b00 && iorw == 1'b0) ? 1'b1 : 1'b0;  
+
 divisor_buf d2(.rst(rst), .clk(clk), .io_addr(ioaddr), .baud_write(divisor_enable), .data_in(bus), .div_buf(bus1), .buf_rdy(rdy));
 downcounter_16 d1(.rst(rst), .clk(clk), .wr_en(rdy), .in(bus1), .r_enable(rec_enable), .t_enable(trans_enable));
 transmitter t1(.clk(clk), .rst(rst),.baud_t_enable(trans_enable), .data_t_enable(d_enable),.data(bus),.txd(txd),.tbr(tbr));
-//receiver module comes here
-
-assign divisor_enable = (iocs) ? ~iorw : 1'b0;
-assign d_enable = (iocs && ioaddr == 2'b00) ? 1'b1 : 1'b0;  
+receiver(.clk(clk), .rst(rst), .r_enable(rec_enable), .rxd(rxd), .rec_enable(rec), .data(databus), .rda(rda));
 
 endmodule
