@@ -1,0 +1,34 @@
+Net LEDs_8Bit<0> LOC ="AE24";
+Net LEDs_8Bit<1> LOC ="AD24";
+Net LEDs_8Bit<2> LOC ="AD25";
+Net LEDs_8Bit<3> LOC ="G16";
+Net LEDs_8Bit<4> LOC ="AD26";
+Net LEDs_8Bit<5> LOC ="G15";
+Net LEDs_8Bit<6> LOC ="L18";
+Net LEDs_8Bit<7> LOC ="H18";
+# Net fpga_0_LEDs_Positions_GPIO_IO_pin<0> LOC=E8  |  IOSTANDARD=LVCMOS33  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_LEDs_Positions_GPIO_IO_pin<1> LOC=AF23  |  IOSTANDARD=LVCMOS33  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_LEDs_Positions_GPIO_IO_pin<2> LOC=AG12  |  IOSTANDARD=LVCMOS33  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_LEDs_Positions_GPIO_IO_pin<3> LOC=AG23  |  IOSTANDARD=LVCMOS33  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_LEDs_Positions_GPIO_IO_pin<4> LOC=AF13  |  IOSTANDARD=LVCMOS33  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+
+#NET clk LOC="AG18";  # Bank 4, Vcco=3.3V, No DCI, 27MHz
+#NET clk LOC="AH17";  # Bank 4, Vcco=3.3V, No DCI, 33MHz
+NET clk LOC="AH15"; # Bank 4, Vcco=3.3V, No DCI, 100MHz
+
+Net RST LOC=U25;
+# Net fpga_0_DIP_Switches_8Bit_GPIO_IO_pin<1> LOC=AG27  |  IOSTANDARD=LVCMOS18  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_DIP_Switches_8Bit_GPIO_IO_pin<2> LOC=AF25  |  IOSTANDARD=LVCMOS18  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_DIP_Switches_8Bit_GPIO_IO_pin<3> LOC=AF26  |  IOSTANDARD=LVCMOS18  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_DIP_Switches_8Bit_GPIO_IO_pin<4> LOC=AE27  |  IOSTANDARD=LVCMOS18  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_DIP_Switches_8Bit_GPIO_IO_pin<5> LOC=AE26  |  IOSTANDARD=LVCMOS18  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_DIP_Switches_8Bit_GPIO_IO_pin<6> LOC=AC25  |  IOSTANDARD=LVCMOS18  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+# Net fpga_0_DIP_Switches_8Bit_GPIO_IO_pin<7> LOC=AC24  |  IOSTANDARD=LVCMOS18  |  PULLDOWN  |  SLEW=SLOW  |  DRIVE=2;
+
+# RS232 Configuration
+NET rxd LOC="AG15";  # Bank 4, Vcco=3.3V, No DCI (rxd)
+NET txd LOC="AG20";  # Bank 4, Vcco=3.3V, No DCI (txd)
+
+NET br_cfg<0> LOC="AC25";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+NET br_cfg<1> LOC="AC24";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET button    LOC="AJ6";   # Bank 18, Vcco=3.3V, No DCI

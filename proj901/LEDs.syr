@@ -1,0 +1,519 @@
+Release 12.2 - xst M.63c (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: LEDs.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "LEDs.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "LEDs"
+Output Format                      : NGC
+Target Device                      : xc5vlx110t-3-ff1136
+
+---- Source Options
+Top Module Name                    : LEDs
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../transmitter.v" in library work
+Compiling verilog file "../down_count_16.v" in library work
+Module <transmitter> compiled
+Compiling verilog file "../divisor.v" in library work
+Module <downcounter_16> compiled
+Compiling verilog file "../spart.v" in library work
+Module <divisor_buf> compiled
+Compiling verilog file "../driver.v" in library work
+Module <spart> compiled
+Compiling verilog file "LEDs.v" in library work
+Module <driver> compiled
+Module <LEDs> compiled
+No errors in compilation
+Analysis of file <"LEDs.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <LEDs> in library <work>.
+
+Analyzing hierarchy for module <spart> in library <work>.
+
+Analyzing hierarchy for module <driver> in library <work>.
+
+Analyzing hierarchy for module <divisor_buf> in library <work>.
+
+Analyzing hierarchy for module <downcounter_16> in library <work>.
+
+Analyzing hierarchy for module <transmitter> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <LEDs>.
+Module <LEDs> is correct for synthesis.
+ 
+Analyzing module <spart> in library <work>.
+Module <spart> is correct for synthesis.
+ 
+Analyzing module <divisor_buf> in library <work>.
+Module <divisor_buf> is correct for synthesis.
+ 
+Analyzing module <downcounter_16> in library <work>.
+Module <downcounter_16> is correct for synthesis.
+ 
+Analyzing module <transmitter> in library <work>.
+Module <transmitter> is correct for synthesis.
+ 
+Analyzing module <driver> in library <work>.
+Module <driver> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <i> in unit <transmitter> has a constant value of 1001 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <iorw> in unit <driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <i> in unit <driver> has a constant value of 00000111 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <flag> in unit <driver> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <driver>.
+    Related source file is "../driver.v".
+WARNING:Xst:647 - Input <rda> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <i> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <flag> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <iocs>.
+    Found 2-bit register for signal <ioaddr>.
+    Found 1-bit register for signal <baud_done>.
+    Found 8-bit register for signal <data>.
+    Summary:
+	inferred  12 D-type flip-flop(s).
+Unit <driver> synthesized.
+
+
+Synthesizing Unit <divisor_buf>.
+    Related source file is "../divisor.v".
+    Found 16-bit register for signal <div_buf>.
+    Found 1-bit register for signal <buf_rdy>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+Unit <divisor_buf> synthesized.
+
+
+Synthesizing Unit <downcounter_16>.
+    Related source file is "../down_count_16.v".
+    Found 1-bit register for signal <t_enable>.
+    Found 1-bit register for signal <r_enable>.
+    Found 5-bit up counter for signal <count>.
+    Found 1-bit register for signal <rdy>.
+    Found 16-bit register for signal <shift_reg>.
+    Found 16-bit subtractor for signal <shift_reg$addsub0000> created at line 40.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  19 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <downcounter_16> synthesized.
+
+
+Synthesizing Unit <transmitter>.
+    Related source file is "../transmitter.v".
+    Found 1-bit register for signal <t_busy>.
+    Found 4-bit down counter for signal <t_count>.
+    Found 10-bit register for signal <t_shift_reg>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  11 D-type flip-flop(s).
+Unit <transmitter> synthesized.
+
+
+Synthesizing Unit <spart>.
+    Related source file is "../spart.v".
+WARNING:Xst:647 - Input <rxd> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1305 - Output <rda> is never assigned. Tied to value 0.
+WARNING:Xst:646 - Signal <rec_enable> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rec> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <bus> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <spart> synthesized.
+
+
+Synthesizing Unit <LEDs>.
+    Related source file is "LEDs.v".
+    Found 8-bit register for signal <LEDs_8Bit>.
+Unit <LEDs> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 16-bit subtractor                                     : 1
+# Counters                                             : 2
+ 4-bit down counter                                    : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 37
+ 1-bit register                                        : 33
+ 16-bit register                                       : 1
+ 2-bit register                                        : 1
+ 8-bit register                                        : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <LEDs_8Bit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <LEDs_8Bit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <5> (without init value) has a constant value of 1 in block <LEDs_8Bit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 1 in block <LEDs_8Bit>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 16-bit subtractor                                     : 1
+# Counters                                             : 2
+ 4-bit down counter                                    : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 67
+ Flip-Flops                                            : 67
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <5> in Unit <LPM_DFF_10> is equivalent to the following FF/Latch, which will be removed : <7> 
+INFO:Xst:2261 - The FF/Latch <1> in Unit <LPM_DFF_10> is equivalent to the following FF/Latch, which will be removed : <3> 
+INFO:Xst:2261 - The FF/Latch <0> in Unit <LPM_DFF_10> is equivalent to the following FF/Latch, which will be removed : <2> 
+INFO:Xst:2261 - The FF/Latch <4> in Unit <LPM_DFF_10> is equivalent to the following FF/Latch, which will be removed : <6> 
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <LPM_DFF_10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <5> (without init value) has a constant value of 1 in block <LPM_DFF_10>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <LEDs> ...
+
+Optimizing unit <driver> ...
+
+Optimizing unit <divisor_buf> ...
+
+Optimizing unit <downcounter_16> ...
+
+Optimizing unit <transmitter> ...
+WARNING:Xst:2677 - Node <spart0/d1/r_enable> of sequential type is unconnected in block <LEDs>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block LEDs, actual ratio is 0.
+FlipFlop LEDs_8Bit_4 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop LEDs_8Bit_1 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 71
+ Flip-Flops                                            : 71
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : LEDs.ngr
+Top Level Output File Name         : LEDs
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 133
+#      GND                         : 1
+#      INV                         : 16
+#      LUT1                        : 1
+#      LUT2                        : 5
+#      LUT3                        : 9
+#      LUT4                        : 29
+#      LUT5                        : 10
+#      LUT6                        : 30
+#      MUXCY                       : 15
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 71
+#      FD                          : 22
+#      FDC                         : 2
+#      FDP                         : 2
+#      FDR                         : 18
+#      FDRE                        : 15
+#      FDRSE                       : 2
+#      FDSE                        : 10
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 12
+#      IBUF                        : 3
+#      OBUF                        : 9
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx110tff1136-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              67  out of  69120     0%  
+ Number of Slice LUTs:                  100  out of  69120     0%  
+    Number used as Logic:               100  out of  69120     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    102
+   Number with an unused Flip Flop:      35  out of    102    34%  
+   Number with an unused LUT:             2  out of    102     1%  
+   Number of fully used LUT-FF pairs:    65  out of    102    63%  
+   Number of unique control sets:        13
+
+IO Utilization: 
+ Number of IOs:                          14
+ Number of bonded IOBs:                  13  out of    640     2%  
+    IOB Flip Flops/Latches:               4
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 71    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+RST                                | IBUF                   | 4     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.421ns (Maximum Frequency: 413.018MHz)
+   Minimum input arrival time before clock: 2.820ns
+   Maximum output required time after clock: 2.775ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.421ns (frequency: 413.018MHz)
+  Total number of paths / destination ports: 997 / 113
+-------------------------------------------------------------------------
+Delay:               2.421ns (Levels of Logic = 3)
+  Source:            spart0/d1/count_3 (FF)
+  Destination:       spart0/d1/count_2 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: spart0/d1/count_3 to spart0/d1/count_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.396   0.622  spart0/d1/count_3 (spart0/d1/count_3)
+     LUT4:I0->O            1   0.086   0.768  spart0/d1/count_or0000_SW0 (N01)
+     LUT6:I1->O            5   0.086   0.377  spart0/d1/count_or0000 (spart0/d1/count_or0000)
+     LUT3:I2->O            1   0.086   0.000  spart0/d1/count_0_rstpot (spart0/d1/count_0_rstpot)
+     FD:D                     -0.022          spart0/d1/count_0
+    ----------------------------------------
+    Total                      2.421ns (0.654ns logic, 1.767ns route)
+                                       (27.0% logic, 73.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 88 / 77
+-------------------------------------------------------------------------
+Offset:              2.820ns (Levels of Logic = 4)
+  Source:            RST (PAD)
+  Destination:       spart0/d1/count_2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: RST to spart0/d1/count_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            53   0.694   0.942  RST_IBUF (RST_IBUF)
+     LUT6:I0->O            1   0.086   0.549  spart0/d1/shift_reg_cmp_eq0000110_SW1 (N5)
+     LUT6:I3->O            5   0.086   0.377  spart0/d1/count_or0000 (spart0/d1/count_or0000)
+     LUT3:I2->O            1   0.086   0.000  spart0/d1/count_0_rstpot (spart0/d1/count_0_rstpot)
+     FD:D                     -0.022          spart0/d1/count_0
+    ----------------------------------------
+    Total                      2.820ns (0.952ns logic, 1.868ns route)
+                                       (33.8% logic, 66.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              2.775ns (Levels of Logic = 1)
+  Source:            spart0/t1/t_shift_reg_0 (FF)
+  Destination:       txd (PAD)
+  Source Clock:      clk rising
+
+  Data Path: spart0/t1/t_shift_reg_0 to txd
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDSE:C->Q             1   0.396   0.235  spart0/t1/t_shift_reg_0 (spart0/t1/t_shift_reg_0)
+     OBUF:I->O                 2.144          txd_OBUF (txd)
+    ----------------------------------------
+    Total                      2.775ns (2.540ns logic, 0.235ns route)
+                                       (91.5% logic, 8.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.19 secs
+ 
+--> 
+
+Total memory usage is 280332 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+

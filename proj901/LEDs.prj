@@ -1,0 +1,6 @@
+verilog work "../transmitter.v"
+verilog work "../down_count_16.v"
+verilog work "../divisor.v"
+verilog work "../spart.v"
+verilog work "../driver.v"
+verilog work "LEDs.v"

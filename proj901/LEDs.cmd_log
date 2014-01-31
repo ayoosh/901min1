@@ -1,0 +1,67 @@
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/faltu/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
+xst -intstyle ise -ifn "C:/Users/Ayoosh/Documents/GitHub/901min1/proj901/LEDs.xst" -ofn "C:/Users/Ayoosh/Documents/GitHub/901min1/proj901/LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LEDs.ucf -p xc5vlx110t-ff1136-3 LEDs.ngc LEDs.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-3 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o LEDs_map.ncd LEDs.ngd LEDs.pcf 
+par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDs.twx LEDs.ncd -o LEDs.twr LEDs.pcf -ucf LEDs.ucf 
+bitgen -intstyle ise -f LEDs.ut LEDs.ncd 
