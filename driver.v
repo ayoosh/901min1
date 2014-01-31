@@ -18,10 +18,10 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output reg iorw, input rda, input tbr, output reg [1:0] ioaddr, inout [7:0] databus);
+module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output reg iorw, input rda, input tbr, output reg [1:0] ioaddr, output [7:0] databus);
 
 reg [7:0]data;
-assign databus = (iorw == 1'b0)? data : 8'hzz;
+assign databus = data;//(iorw == 1'b0)? data : 8'hzz;
 reg baud_done;
 reg [7:0]i;
 reg flag;
@@ -68,15 +68,11 @@ always@(posedge clk) begin
 		end
 	end
 
-	else if (tbr == 1 && flag ==1) begin
+	else if (tbr == 1) begin
 		iocs <= 1;
 		iorw <= 0;
 		ioaddr <= 0;
 		data <= 8'h41;
-		i <= i-1;
-		flag <= 1'b0;
-		if (i == 0)
-			i <= 8'h07;
 	end
 
 	else
