@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 module t_receiver;
 
-reg clk, rst;
+reg clk, rst, rst1;
 wire data;
 wire [7:0]data_bus;
 reg [1:0]baud;
@@ -12,14 +12,16 @@ wire iocs, iorw, ioaddr,rda, tbr;
 initial begin
 	clk = 1;
 	rst = 1;
+	rst1 =1;
 	baud = 2'b00;
 	#2 rst = 0;
+	#10 rst1 =0;
 end
 
 always
 #1 clk = ~clk;
 
-terminal t(.clk(clk), .rst(rst), .data(data));
+terminal t(.clk(clk), .rst(rst1), .data(data));
 spart s(.clk(clk), .rst(rst), .iocs(iocs), .iorw(iorw),.rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus), .txd(tr), .rxd(data));
 driver1 p(.clk(clk), .rst(rst), .br_cfg(baud), .iocs(iocs),.iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus));
 
