@@ -1,7 +1,7 @@
 module driver1(input clk, input rst, input [1:0] br_cfg, output reg iocs, output reg iorw, input rda, input tbr, output reg [1:0] ioaddr, inout [7:0] databus);
 
 reg [7:0]data;
-assign databus = (iorw ==1'b0) ? data : 8'hzz;
+assign databus = (iorw ==1'b0 && ((ioaddr == 2'b00) || (ioaddr == 2'b10) || (ioaddr == 2'b11))) ? data : 8'hzz;
 reg baud_done;
 reg [7:0]i;
 reg flag;
@@ -17,6 +17,7 @@ always@(posedge clk) begin
 		baud_done <= 0;
 		i <= 8'h07;
 		flag <=1'b1;
+		received_data <= 8'd0;
 	end
 	
 	else if (baud_done == 0) begin

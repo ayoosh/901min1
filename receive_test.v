@@ -13,7 +13,7 @@ initial begin
 	clk = 1;
 	rst = 1;
 	rst1 =1;
-	baud = 2'b00;
+	baud = 2'b01;
 	#2 rst = 0;
 	#10 rst1 =0;
 end
