@@ -61,7 +61,7 @@ wire [7:0] databus;
 //Debug area
 always@(posedge clk, posedge RST) begin
 	if(RST) begin
-		LEDs_8Bit <= 8'b10101010;
+		LEDs_8Bit <= 8'b11111111;
 	end
 	else begin
 		LEDs_8Bit <= 8'b11110000;

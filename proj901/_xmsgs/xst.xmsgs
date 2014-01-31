@@ -8,16 +8,10 @@
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">i</arg>&gt; in unit &lt;<arg fmt="%s" index="2">transmitter</arg>&gt; has a constant value of <arg fmt="%s" index="3">1001</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
-<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">iorw</arg>&gt; in unit &lt;<arg fmt="%s" index="2">driver</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
-</msg>
-
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">i</arg>&gt; in unit &lt;<arg fmt="%s" index="2">driver</arg>&gt; has a constant value of <arg fmt="%s" index="3">00000111</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">flag</arg>&gt; in unit &lt;<arg fmt="%s" index="2">driver</arg>&gt; has a constant value of <arg fmt="%s" index="3">1</arg> during circuit operation. The register is replaced by logic.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">rda</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">i</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -26,52 +20,92 @@
 <msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">flag</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">rxd</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">rec</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1305" delta="old" >Output &lt;<arg fmt="%s" index="1">rda</arg>&gt; is never assigned. Tied to value <arg fmt="%s" index="2">0</arg>.
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">databus</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">rec_enable</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 </msg>
 
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">rec</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">bus</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">LEDs_8Bit</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">LEDs_8Bit</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs_8Bit</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs_8Bit</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">LPM_DFF_10</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;7&gt; </arg>
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">LPM_DFF_10</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;3&gt; </arg>
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LEDs</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">LPM_DFF_10</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;2&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">LEDs_8Bit_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">LEDs</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;LEDs_8Bit_1&gt; &lt;LEDs_8Bit_2&gt; &lt;LEDs_8Bit_3&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">LPM_DFF_10</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;6&gt; </arg>
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">spart</arg>: <arg fmt="%d" index="2">8</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">driver</arg>: <arg fmt="%d" index="2">8</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/internal_data_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">LPM_DFF_10</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/internal_data_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">LPM_DFF_10</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/internal_data_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">spart0/d1/r_enable</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/internal_data_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/internal_data_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/internal_data_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/internal_data_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/internal_data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/data_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/data_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/data_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/data_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/data_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/data_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/data_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">driver0/data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">LEDs</arg>&gt;.
 </msg>
 
 </messages>

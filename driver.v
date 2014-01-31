@@ -18,14 +18,16 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output reg iorw, input rda, input tbr, output reg [1:0] ioaddr, output [7:0] databus);
+module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output reg iorw, input rda, input tbr, output reg [1:0] ioaddr, inout [7:0] databus);
 
 reg [7:0]data;
-assign databus = data;//(iorw == 1'b0)? data : 8'hzz;
+assign databus = ((iorw == 1'b0) ? data : 8'hzz);
 reg baud_done;
 reg [7:0]i;
 reg flag;
-
+reg [7:0]internal_data;
+reg have_data;
+reg ready_for_data;
 always@(posedge clk) begin
 	if (rst) begin
 		iocs <= 0;
@@ -34,7 +36,10 @@ always@(posedge clk) begin
 		data <= 0;
 		baud_done <= 0;
 		i <= 8'h07;
-		flag <=1'b1;
+		flag <= 1'b1;
+		internal_data <= 0;
+		have_data <= 0;
+		ready_for_data <= 0;
 	end
 	
 	else if (baud_done == 0) begin
@@ -68,15 +73,31 @@ always@(posedge clk) begin
 		end
 	end
 
-	else if (tbr == 1) begin
+	else if (tbr == 1 && have_data == 1) begin
 		iocs <= 1;
 		iorw <= 0;
 		ioaddr <= 0;
-		data <= 8'h41;
+		data <= internal_data;
+		have_data <= 0;
+	end
+	
+	else if (have_data == 0) begin
+		if (rda == 1 && ready_for_data == 0) begin
+			iocs <= 1;
+			iorw <= 1;
+			ioaddr <= 2'b00;
+			ready_for_data <= 1;
+		end
+		else if (rda == 1 && ready_for_data == 1) begin
+			internal_data <= data;
+			have_data <= 1;
+			ready_for_data <= 0;
+			iocs <= 0;
+		end
 	end
 
 	else
-	iocs <= 0;
+	iocs <= 0; // Sanity keep iocs to 0 if nothing to do
 
 end
 endmodule

@@ -1,4 +1,5 @@
 verilog work "../transmitter.v"
+verilog work "../receiver.v"
 verilog work "../down_count_16.v"
 verilog work "../divisor.v"
 verilog work "../spart.v"
