@@ -1,4 +1,4 @@
-`timescale 5ns/1ps
+`timescale 1ns/1ps
 module t_receiver;
 
 reg clk, rst, rst1;
@@ -15,7 +15,7 @@ initial begin
 	rst1 =1;
 	baud = 2'b01;
 	#2 rst = 0;
-	#10 rst1 =0;
+	#20 rst1 =0;
 end
 
 always
@@ -23,6 +23,6 @@ always
 
 terminal t(.clk(clk), .rst(rst1), .data(data));
 spart s(.clk(clk), .rst(rst), .iocs(iocs), .iorw(iorw),.rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus), .txd(tr), .rxd(data));
-driver1 p(.clk(clk), .rst(rst), .br_cfg(baud), .iocs(iocs),.iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus));
+driver p(.clk(clk), .rst(rst), .br_cfg(baud), .iocs(iocs),.iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus));
 
 endmodule  

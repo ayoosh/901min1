@@ -32,7 +32,7 @@ always@(posedge clk) begin
 	if (rst) begin
 		iocs <= 0;
 		iorw <= 0;
-		ioaddr <= 0;
+		ioaddr <= 2'b00;
 		data <= 0;
 		baud_done <= 0;
 		i <= 8'h07;
@@ -43,7 +43,7 @@ always@(posedge clk) begin
 	end
 	
 	else if (baud_done == 0) begin
-		if (ioaddr == 0) begin
+		if (ioaddr == 2'b00) begin
 			iocs <= 1;
 			ioaddr <= 2'b10;
 			iorw <= 0;
@@ -60,7 +60,7 @@ always@(posedge clk) begin
 		else if (ioaddr == 2'b10) begin
 			iocs <= 1;
 			ioaddr <= 2'b11;
-			iorw <= 0;
+			iorw <= 2'b00;
 			baud_done <= 1;
 			if (br_cfg == 2'b00)
 				data <= 8'h05;
@@ -76,28 +76,28 @@ always@(posedge clk) begin
 	else if (tbr == 1 && have_data == 1) begin
 		iocs <= 1;
 		iorw <= 0;
-		ioaddr <= 0;
+		ioaddr <= 2'b00;
 		data <= internal_data;
 		have_data <= 0;
 	end
 	
-	else if (have_data == 0) begin
-		if (rda == 1 && ready_for_data == 0) begin
+	else if (have_data == 0 && rda == 1) begin
+		if (ready_for_data == 0) begin
 			iocs <= 1;
 			iorw <= 1;
 			ioaddr <= 0;
 			ready_for_data <= 1;
 		end
-		else if (rda == 1 && ready_for_data == 1) begin
+		else if (ready_for_data == 1) begin
 			internal_data <= data;
-			have_data <= 1;
-			ready_for_data <= 0;
-			iocs <= 0;
+			have_data <= 1'b1;
+			ready_for_data <= 1'b0;
+			iocs <= 1'b0;
 		end
 	end
 
-	else
-	iocs <= 0; // Sanity keep iocs to 0 if nothing to do
-
+	else begin
+	   iocs <= 1'b0; // Sanity keep iocs to 0 if nothing to do
+   end
 end
 endmodule

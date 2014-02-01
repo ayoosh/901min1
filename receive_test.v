@@ -1,4 +1,4 @@
-`timescale 5ns/1ps
+`timescale 1ns/1ps
 module t_receiver;
 
 reg clk, rst, rst1;
@@ -21,8 +21,8 @@ end
 always
 #1 clk = ~clk;
 
-terminal t(.clk(clk), .rst(rst1), .data(data));
-spart s(.clk(clk), .rst(rst), .iocs(iocs), .iorw(iorw),.rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus), .txd(tr), .rxd(data));
-driver1 p(.clk(clk), .rst(rst), .br_cfg(baud), .iocs(iocs),.iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus));
+terminal term(.clk(clk), .rst(rst1), .data(data));
+spart spt_module(.clk(clk), .rst(rst), .iocs(iocs), .iorw(iorw),.rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus), .txd(tr), .rxd(data));
+driver processor(.clk(clk), .rst(rst), .br_cfg(baud), .iocs(iocs),.iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(io), .databus(data_bus));
 
 endmodule  

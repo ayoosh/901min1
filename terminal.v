@@ -16,7 +16,7 @@ always@(posedge clk)begin
 			baud_counter <= 16'h28A7;
 			for(i=0 ;i < 4'b1011; i = i+1)
 				data_send[i] <= data_send[i+1];
-			data_send[11] <=data_send[0] ;
+			data_send[11] <=1'b1 ;
 		end
 		else
 			baud_counter <= baud_counter - 1;
