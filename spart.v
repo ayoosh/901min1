@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module spart( input clk, input rst, input iocs, input iorw, output rda, output tbr, input [1:0]ioaddr, inout [7:0]databus, output txd, input rxd);
+module spart( input clk, input rst, input iocs, input iorw, output rda, output tbr, input [1:0]ioaddr, inout [7:0]databus, output txd, input rxd, output reg spart_led);
 
 wire [7:0]bus;
 wire [15:0]bus_from_buf_to_counter;
@@ -30,7 +30,7 @@ wire d_enable;
 wire r_enable;
 
 assign rec = (iocs && ioaddr == 2'b00 && iorw == 1'b1) ? 1'b1 : 1'b0;
-assign databus = ((iorw == 1'b1 && ((ioaddr==00) || (ioaddr==01))) ? bus : 8'hzz);
+assign databus = (iorw == 1'b1) ? bus : 8'hzz;
 assign divisor_enable = (iocs && (ioaddr == 2'b10 || ioaddr == 2'b11)) ? ~iorw : 1'b0;
 assign d_enable = (iocs && ioaddr == 2'b00 && iorw == 1'b0) ? 1'b1 : 1'b0;  
 assign rec_enable = (iocs && ioaddr == 2'b00 && iorw == 1'b1) ? 1'b1 : 1'b0;  
@@ -40,4 +40,15 @@ downcounter_16 d1(.rst(rst), .clk(clk), .wr_en(rdy), .in(bus_from_buf_to_counter
 transmitter t1(.clk(clk), .rst(rst),.baud_t_enable(trans_enable), .data_t_enable(d_enable),.data(databus),.txd(txd),.tbr(tbr));
 receiver r(.clk(clk), .rst(rst), .r_enable(r_enable), .rxd(rxd), .rec_enable(rec_enable), .data(bus), .rda(rda));
 
+always@(posedge clk) begin
+	if (rst) begin
+		spart_led <= 8'b10101010;
+	end
+	if (rda == 1) begin
+		spart_led <= 8'h70;
+	end
+	else if (tbr == 1) begin
+		spart_led <= 8'h07;
+	end
+end
 endmodule
