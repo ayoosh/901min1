@@ -7,7 +7,7 @@ wire [7:0]data_bus;
 reg [1:0]baud;
 wire [1:0]io;
 wire tr;
-wire iocs, iorw, ioaddr,rda, tbr;
+wire iocs, iorw, rda, tbr;
 
 initial begin
 	clk = 1;

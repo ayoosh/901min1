@@ -60,7 +60,7 @@ always@(posedge clk) begin
 		else if (ioaddr == 2'b10) begin
 			iocs <= 1;
 			ioaddr <= 2'b11;
-			iorw <= 2'b00;
+			iorw <= 0;
 			baud_done <= 1;
 			if (br_cfg == 2'b00)
 				data <= 8'h05;
@@ -81,14 +81,14 @@ always@(posedge clk) begin
 		have_data <= 0;
 	end
 	
-	else if (have_data == 0) begin
-		if (rda == 1 && ready_for_data == 0) begin
+	else if (have_data == 0 && rda == 1) begin
+		if (ready_for_data == 0) begin
 			iocs <= 1;
 			iorw <= 1;
 			ioaddr <= 2'b00;
 			ready_for_data <= 1;
 		end
-		else if (rda == 1 && ready_for_data == 1) begin
+		else if (ready_for_data == 1) begin
 			internal_data <= data;
 			have_data <= 1'b1;
 			ready_for_data <= 1'b0;
