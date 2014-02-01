@@ -48,13 +48,13 @@ always@(posedge clk) begin
 			ioaddr <= 2'b10;
 			iorw <= 0;
 			if (br_cfg == 2'b00)
-				data <= 8'h16;
+				data <= 8'h15;
 			if (br_cfg == 2'b01)
-				data <= 8'h8b;
+				data <= 8'h8a;
 			if (br_cfg == 2'b10)
-				data <= 8'h46;
+				data <= 8'h45;
 			if (br_cfg == 2'b11)
-				data <= 8'ha3;
+				data <= 8'ha2;
 		end
 
 		else if (ioaddr == 2'b10) begin
