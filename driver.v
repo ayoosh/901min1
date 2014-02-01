@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output reg iorw, input rda, input tbr, output reg [1:0] ioaddr, inout [7:0] databus, output reg [7:0]driver_led);
+module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output reg iorw, input rda, input tbr, output reg [1:0] ioaddr, inout [7:0] databus);
 
 reg [7:0]data;
 assign databus = ((iorw == 1'b0) ? data : 8'hzz);
@@ -26,8 +26,8 @@ reg baud_done;
 reg [7:0]i;
 reg flag;
 reg [7:0]internal_data;
-reg have_data; // Is there data in internal_data to transmit
-reg ready_for_data; // 
+reg have_data;
+reg ready_for_data;
 always@(posedge clk) begin
 	if (rst) begin
 		iocs <= 0;
@@ -85,7 +85,7 @@ always@(posedge clk) begin
 		if (ready_for_data == 0) begin
 			iocs <= 1;
 			iorw <= 1;
-			ioaddr <= 0;
+			ioaddr <= 2'b00;
 			ready_for_data <= 1;
 		end
 		else if (ready_for_data == 1) begin
