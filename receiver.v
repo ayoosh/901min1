@@ -28,10 +28,9 @@ module receiver(
 			bitcnt <= 0;
 			misery <= 0;
 		end
-
 		
 		// This block runs at system clock.
-		if (rec_enable == 1 && rda == 1) begin // rda == 1 is mandated by handshake. But the processor can violate protocol and try to read even if rda is not 1
+		else if (rec_enable == 1 && rda == 1) begin // rda == 1 is mandated by handshake. But the processor can violate protocol and try to read even if rda is not 1
 			rda <= 0;
 			start <= 0;
 			bitcnt <= 0;
