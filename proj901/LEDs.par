@@ -1,7 +1,7 @@
 Release 12.2 par M.63c (nt64)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
-AIR-PC::  Thu Jan 30 20:11:51 2014
+AIR-PC::  Sat Feb 01 20:44:04 2014
 
 par -w -intstyle ise -ol high -mt off LEDs_map.ncd LEDs.ncd LEDs.pcf 
 
@@ -30,14 +30,14 @@ Device Utilization Summary:
       Number of LOCed IOBs                  14 out of 14    100%
 
    Number of OLOGICs                         4 out of 800     1%
-   Number of Slices                         59 out of 17280   1%
-   Number of Slice Registers                87 out of 69120   1%
-      Number used as Flip Flops             87
+   Number of Slices                         72 out of 17280   1%
+   Number of Slice Registers               105 out of 69120   1%
+      Number used as Flip Flops            105
       Number used as Latches                 0
       Number used as LatchThrus              0
 
-   Number of Slice LUTS                    134 out of 69120   1%
-   Number of Slice LUT-Flip Flop pairs     145 out of 69120   1%
+   Number of Slice LUTS                    166 out of 69120   1%
+   Number of Slice LUT-Flip Flop pairs     179 out of 69120   1%
 
 
 Overall effort level (-ol):   High 
@@ -46,26 +46,24 @@ Router effort level (-rl):    High
 Starting initial Timing Analysis.  REAL time: 8 secs 
 Finished initial Timing Analysis.  REAL time: 8 secs 
 
-WARNING:Par:288 - The signal br_cfg<0>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal br_cfg<1>_IBUF has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 660 unrouted;      REAL time: 9 secs 
+Phase  1  : 872 unrouted;      REAL time: 10 secs 
 
-Phase  2  : 589 unrouted;      REAL time: 10 secs 
+Phase  2  : 787 unrouted;      REAL time: 10 secs 
 
-Phase  3  : 161 unrouted;      REAL time: 10 secs 
+Phase  3  : 288 unrouted;      REAL time: 10 secs 
 
-Phase  4  : 176 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+Phase  4  : 332 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
 
 Updating file: LEDs.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
 
 Updating file: LEDs.ncd with current fully routed design.
 
@@ -75,7 +73,7 @@ Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 1
 
 Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
 Total REAL time to Router completion: 19 secs 
-Total CPU time to Router completion: 19 secs 
+Total CPU time to Router completion: 20 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -93,7 +91,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGCTRL_X0Y0| No   |   46 |  0.378     |  1.787      |
+|           clk_BUFGP | BUFGCTRL_X0Y0| No   |   55 |  0.334     |  1.787      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -110,8 +108,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     2.312ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.333ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     2.408ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.317ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -127,18 +125,16 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+Total REAL time to PAR completion: 25 secs 
+Total CPU time to PAR completion: 25 secs 
 
-Total REAL time to PAR completion: 24 secs 
-Total CPU time to PAR completion: 24 secs 
-
-Peak Memory Usage:  496 MB
+Peak Memory Usage:  498 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 4
+Number of warning messages: 0
 Number of info messages: 1
 
 Writing design to file LEDs.ncd

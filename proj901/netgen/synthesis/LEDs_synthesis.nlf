@@ -1,0 +1,20 @@
+Release 12.2 - netgen M.63c (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis
+-ofmt verilog -sim LEDs.ngc LEDs_synthesis.v  
+
+Reading design 'LEDs.ngc' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing Verilog netlist file
+'C:\Users\Ayoosh\Documents\GitHub\901min1\proj901\netgen\synthesis\LEDs_synthesi
+s.v' ...
+INFO:NetListWriters:633 - The generated Verilog netlist contains Xilinx UNISIM
+   simulation primitives and has to be used with UNISIM simulation library for
+   correct compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 131376 kilobytes

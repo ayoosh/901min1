@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator M.63c
+# Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION M.63c
+DATE            02/01/2014 - 16:37
+SOURCE          C:\Users\Ayoosh\Documents\GitHub\901min1\proj901\flash.mcs
+DEVICE          XCF32P
+DATA_WIDTH      8
+FILL_DATA       0xFF
+SIGNATURE       0x04A7673E
+START_ADDRESS   0x00000000 END_ADDRESS 0x003B5ABF DIRECTION_UP   "C:/Users/Ayoosh/Documents/GitHub/901min1/proj901/leds.bit" 5vlx110tff1136

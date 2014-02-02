@@ -10,32 +10,35 @@ Target Device  : xc5vlx110t
 Target Package : ff1136
 Target Speed   : -3
 Mapper Version : virtex5 -- $Revision: 1.52 $
-Mapped Date    : Thu Jan 30 20:11:10 2014
+Mapped Date    : Sat Feb 01 20:43:34 2014
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    2
+Number of warnings:    0
 Slice Logic Utilization:
-  Number of Slice Registers:                    87 out of  69,120    1%
-    Number used as Flip Flops:                  87
-  Number of Slice LUTs:                        134 out of  69,120    1%
-    Number used as logic:                      134 out of  69,120    1%
-      Number using O6 output only:             119
+  Number of Slice Registers:                   105 out of  69,120    1%
+    Number used as Flip Flops:                 105
+  Number of Slice LUTs:                        166 out of  69,120    1%
+    Number used as logic:                      165 out of  69,120    1%
+      Number using O6 output only:             150
       Number using O5 output only:               1
       Number using O5 and O6:                   14
+    Number used as Memory:                       1 out of  17,920    1%
+      Number used as Shift Register:             1
+        Number using O6 output only:             1
   Number of route-thrus:                         1
     Number using O6 output only:                 1
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    59 out of  17,280    1%
-  Number of LUT Flip Flop pairs used:          145
-    Number with an unused Flip Flop:            58 out of     145   40%
-    Number with an unused LUT:                  11 out of     145    7%
-    Number of fully used LUT-FF pairs:          76 out of     145   52%
+  Number of occupied Slices:                    72 out of  17,280    1%
+  Number of LUT Flip Flop pairs used:          179
+    Number with an unused Flip Flop:            74 out of     179   41%
+    Number with an unused LUT:                  13 out of     179    7%
+    Number of fully used LUT-FF pairs:          92 out of     179   51%
     Number of unique control sets:              30
     Number of slice register sites lost
-      to control set restrictions:              69 out of  69,120    1%
+      to control set restrictions:              66 out of  69,120    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -54,11 +57,11 @@ Specific Feature Utilization:
   Number of BUFG/BUFGCTRLs:                      1 out of      32    3%
     Number used as BUFGs:                        1
 
-Average Fanout of Non-Clock Nets:                3.84
+Average Fanout of Non-Clock Nets:                4.12
 
-Peak Memory Usage:  572 MB
-Total REAL time to MAP completion:  40 secs 
-Total CPU time to MAP completion:   40 secs 
+Peak Memory Usage:  556 MB
+Total REAL time to MAP completion:  28 secs 
+Total CPU time to MAP completion:   28 secs 
 
 Table of Contents
 -----------------
@@ -81,18 +84,9 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:PhysDesignRules:367 - The signal <br_cfg<0>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <br_cfg<1>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network br_cfg<1>_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 1 more times for the following
-   (max. 5 shown):
-   br_cfg<0>_IBUF
-   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -128,12 +122,12 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | LEDs_8Bit<0>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
-| LEDs_8Bit<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
+| LEDs_8Bit<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | LEDs_8Bit<2>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
-| LEDs_8Bit<3>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
-| LEDs_8Bit<4>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LEDs_8Bit<3>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LEDs_8Bit<4>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
 | LEDs_8Bit<5>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| LEDs_8Bit<6>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LEDs_8Bit<6>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF          |          |          |
 | LEDs_8Bit<7>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | RST                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | br_cfg<0>                          | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |

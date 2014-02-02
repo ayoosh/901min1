@@ -22,6 +22,7 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="proj901.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="LEDs.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="LEDs.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="LEDs.lso"/>
@@ -67,6 +68,9 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="leds.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="leds.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="leds.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
+    <file xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/LEDs_synthesis.nlf"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/LEDs_synthesis.v"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -79,40 +83,41 @@
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391126560" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1391126560">
+    <transform xil_pn:end_ts="1391308672" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1391308672">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391126560" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="8614275003138427789" xil_pn:start_ts="1391126560">
+    <transform xil_pn:end_ts="1391308672" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="8614275003138427789" xil_pn:start_ts="1391308672">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391126560" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="1333312376565580534" xil_pn:start_ts="1391126560">
+    <transform xil_pn:end_ts="1391308672" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="1333312376565580534" xil_pn:start_ts="1391308672">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391126560" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1391126560">
+    <transform xil_pn:end_ts="1391308672" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1391308672">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391126560" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="7205484236592859103" xil_pn:start_ts="1391126560">
+    <transform xil_pn:end_ts="1391308672" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="7205484236592859103" xil_pn:start_ts="1391308672">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391126560" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-8458126479482839362" xil_pn:start_ts="1391126560">
+    <transform xil_pn:end_ts="1391308672" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-8458126479482839362" xil_pn:start_ts="1391308672">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391126560" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-6331859619833385920" xil_pn:start_ts="1391126560">
+    <transform xil_pn:end_ts="1391308672" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-6331859619833385920" xil_pn:start_ts="1391308672">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391134265" xil_pn:in_ck="26691207713074164" xil_pn:name="TRANEXT_xstsynthesize_virtex5" xil_pn:prop_ck="8865846064027109532" xil_pn:start_ts="1391134258">
+    <transform xil_pn:end_ts="1391309009" xil_pn:in_ck="26691207713074164" xil_pn:name="TRANEXT_xstsynthesize_virtex5" xil_pn:prop_ck="8865846064027109532" xil_pn:start_ts="1391309001">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="LEDs.lso"/>
       <outfile xil_pn:name="LEDs.ngc"/>
       <outfile xil_pn:name="LEDs.ngr"/>
@@ -125,11 +130,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1391126567" xil_pn:in_ck="3330912327636" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="123229027434710026" xil_pn:start_ts="1391126567">
+    <transform xil_pn:end_ts="1391308680" xil_pn:in_ck="3330912327636" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="123229027434710026" xil_pn:start_ts="1391308680">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391134269" xil_pn:in_ck="-650838670905851806" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="4149291874024201663" xil_pn:start_ts="1391134265">
+    <transform xil_pn:end_ts="1391309013" xil_pn:in_ck="-650838670905851806" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="4149291874024201663" xil_pn:start_ts="1391309009">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="LEDs.bld"/>
@@ -138,7 +143,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1391134311" xil_pn:in_ck="-650837264497233565" xil_pn:name="TRANEXT_map_virtex5" xil_pn:prop_ck="-4825239691831807802" xil_pn:start_ts="1391134269">
+    <transform xil_pn:end_ts="1391309043" xil_pn:in_ck="-650837264497233565" xil_pn:name="TRANEXT_map_virtex5" xil_pn:prop_ck="-4825239691831807802" xil_pn:start_ts="1391309013">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -153,9 +158,8 @@
       <outfile xil_pn:name="LEDs_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1391134347" xil_pn:in_ck="-2310362023120277764" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-4097515898943074650" xil_pn:start_ts="1391134311">
+    <transform xil_pn:end_ts="1391309081" xil_pn:in_ck="-2310362023120277764" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-4097515898943074650" xil_pn:start_ts="1391309043">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="LEDs.ncd"/>
       <outfile xil_pn:name="LEDs.pad"/>
@@ -168,9 +172,8 @@
       <outfile xil_pn:name="LEDs_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1391134376" xil_pn:in_ck="3330912320011" xil_pn:name="TRANEXT_bitFile_virtex5" xil_pn:prop_ck="714238716667002246" xil_pn:start_ts="1391134347">
+    <transform xil_pn:end_ts="1391309112" xil_pn:in_ck="3330912320011" xil_pn:name="TRANEXT_bitFile_virtex5" xil_pn:prop_ck="714238716667002246" xil_pn:start_ts="1391309081">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="LEDs.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
@@ -181,16 +184,31 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1391134386" xil_pn:in_ck="4737281790005" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="7814804799388247210" xil_pn:start_ts="1391134376">
+    <transform xil_pn:end_ts="1391309115" xil_pn:in_ck="4737281790005" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="7814804799388247210" xil_pn:start_ts="1391309112">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1391134347" xil_pn:in_ck="-651022910434841377" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1391134337">
+    <transform xil_pn:end_ts="1391293873" xil_pn:in_ck="4737281790005" xil_pn:name="TRAN_genImpactFile" xil_pn:prop_ck="2057096493129103028" xil_pn:start_ts="1391293870">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+    <transform xil_pn:end_ts="1391309081" xil_pn:in_ck="-651022910434841377" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1391309071">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="LEDs.twr"/>
       <outfile xil_pn:name="LEDs.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1391217413" xil_pn:in_ck="3330912320142" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="-5899747914411208516" xil_pn:start_ts="1391217411">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="netgen"/>
+      <outfile xil_pn:name="netgen/synthesis/LEDs_synthesis.nlf"/>
+      <outfile xil_pn:name="netgen/synthesis/LEDs_synthesis.v"/>
     </transform>
   </transforms>
 

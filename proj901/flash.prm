@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator M.63c
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\Users\Ayoosh\Documents\GitHub\901min1\proj901//flash -x xcf32p -u 00000000 C:/Users/Ayoosh/Documents/GitHub/901min1/proj901/leds.bit 
+
+PROM C:\Users\Ayoosh\Documents\GitHub\901min1\proj901\flash.prm map: Sat Feb 01 16:37:13 2014
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          4096K
+PROM start    0000:0000
+PROM end      003f:ffff
+PROM checksum 04a7673e
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    003b:5abf     Feb 01 16:12:35 2014 C:/Users/Ayoosh/Documents/GitHub/901min1/proj901/leds.bit

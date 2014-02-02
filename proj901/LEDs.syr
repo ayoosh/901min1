@@ -237,22 +237,24 @@ Synthesizing Unit <receiver>.
     Found 1-bit register for signal <rda>.
     Found 8-bit register for signal <data>.
     Found 4-bit up counter for signal <bitcnt>.
-    Found 4-bit comparator greatequal for signal <data_7$cmp_ge0000> created at line 23.
-    Found 4-bit comparator greater for signal <data_7$cmp_gt0000> created at line 52.
-    Found 4-bit comparator lessequal for signal <data_7$cmp_le0000> created at line 52.
-    Found 4-bit down counter for signal <i>.
-    Found 4-bit comparator less for signal <i$cmp_lt0000> created at line 23.
-    Found 4-bit subtractor for signal <i$mux0000>.
+    Found 4-bit comparator greatequal for signal <data_7$cmp_ge0000> created at line 81.
+    Found 5-bit comparator greater for signal <data_7$cmp_gt0000> created at line 82.
+    Found 5-bit comparator lessequal for signal <data_7$cmp_le0000> created at line 82.
     Found 1-bit register for signal <misery>.
     Found 1-bit register for signal <receive_sig>.
+    Found 1-bit register for signal <resynch>.
+    Found 5-bit register for signal <samplescnt>.
+    Found 5-bit adder for signal <samplescnt$addsub0000>.
+    Found 5-bit comparator greatequal for signal <samplescnt$cmp_ge0000> created at line 44.
+    Found 5-bit comparator less for signal <samplescnt$cmp_lt0000> created at line 44.
     Found 1-bit register for signal <start>.
-    Found 4-bit up counter for signal <zcnt>.
-    Found 4-bit adder for signal <zcnt$mux0000>.
+    Found 5-bit register for signal <zcnt>.
+    Found 5-bit adder for signal <zcnt$addsub0000>.
     Summary:
-	inferred   3 Counter(s).
-	inferred  12 D-type flip-flop(s).
+	inferred   1 Counter(s).
+	inferred  23 D-type flip-flop(s).
 	inferred   2 Adder/Subtractor(s).
-	inferred   4 Comparator(s).
+	inferred   5 Comparator(s).
 Unit <receiver> synthesized.
 
 
@@ -267,7 +269,9 @@ Unit <spart> synthesized.
 
 Synthesizing Unit <LEDs>.
     Related source file is "LEDs.v".
-WARNING:Xst:646 - Signal <databus> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <top_spart_led> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <top_driver_led> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <debug_spart> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Found 8-bit register for signal <LEDs_8Bit>.
     Summary:
 	inferred   8 D-type flip-flop(s).
@@ -281,22 +285,23 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit subtractor                                     : 1
- 4-bit adder                                           : 1
- 4-bit subtractor                                      : 1
-# Counters                                             : 5
- 4-bit down counter                                    : 2
- 4-bit up counter                                      : 2
+ 5-bit adder                                           : 2
+# Counters                                             : 3
+ 4-bit down counter                                    : 1
+ 4-bit up counter                                      : 1
  5-bit up counter                                      : 1
-# Registers                                            : 53
- 1-bit register                                        : 48
+# Registers                                            : 56
+ 1-bit register                                        : 49
  16-bit register                                       : 1
  2-bit register                                        : 1
+ 5-bit register                                        : 2
  8-bit register                                        : 3
-# Comparators                                          : 4
+# Comparators                                          : 5
  4-bit comparator greatequal                           : 1
- 4-bit comparator greater                              : 1
- 4-bit comparator less                                 : 1
- 4-bit comparator lessequal                            : 1
+ 5-bit comparator greatequal                           : 1
+ 5-bit comparator greater                              : 1
+ 5-bit comparator less                                 : 1
+ 5-bit comparator lessequal                            : 1
 # Tristates                                            : 2
  8-bit tristate buffer                                 : 2
 
@@ -306,9 +311,9 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <LEDs_8Bit_4> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LEDs_8Bit_1> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LEDs_8Bit_3> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LEDs_8Bit_5> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LEDs_8Bit_6> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LEDs_8Bit_7> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
@@ -317,48 +322,32 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit subtractor                                     : 1
- 4-bit adder                                           : 1
- 4-bit subtractor                                      : 1
-# Counters                                             : 5
- 4-bit down counter                                    : 2
- 4-bit up counter                                      : 2
+ 5-bit adder                                           : 2
+# Counters                                             : 3
+ 4-bit down counter                                    : 1
+ 4-bit up counter                                      : 1
  5-bit up counter                                      : 1
-# Registers                                            : 90
- Flip-Flops                                            : 90
-# Comparators                                          : 4
+# Registers                                            : 101
+ Flip-Flops                                            : 101
+# Comparators                                          : 5
  4-bit comparator greatequal                           : 1
- 4-bit comparator greater                              : 1
- 4-bit comparator less                                 : 1
- 4-bit comparator lessequal                            : 1
+ 5-bit comparator greatequal                           : 1
+ 5-bit comparator greater                              : 1
+ 5-bit comparator less                                 : 1
+ 5-bit comparator lessequal                            : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <LEDs_8Bit_4> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LEDs_8Bit_1> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LEDs_8Bit_3> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LEDs_8Bit_5> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LEDs_8Bit_6> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <LEDs_8Bit_7> (without init value) has a constant value of 1 in block <LEDs>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <LEDs_8Bit_0> in Unit <LEDs> is equivalent to the following 3 FFs/Latches, which will be removed : <LEDs_8Bit_1> <LEDs_8Bit_2> <LEDs_8Bit_3> 
+INFO:Xst:2261 - The FF/Latch <LEDs_8Bit_0> in Unit <LEDs> is equivalent to the following 3 FFs/Latches, which will be removed : <LEDs_8Bit_2> <LEDs_8Bit_4> <LEDs_8Bit_6> 
 WARNING:Xst:2042 - Unit spart: 8 internal tristates are replaced by logic (pull-up yes): databus<0>, databus<1>, databus<2>, databus<3>, databus<4>, databus<5>, databus<6>, databus<7>.
 WARNING:Xst:2042 - Unit driver: 8 internal tristates are replaced by logic (pull-up yes): databus<0>, databus<1>, databus<2>, databus<3>, databus<4>, databus<5>, databus<6>, databus<7>.
-WARNING:Xst:2677 - Node <driver0/internal_data_7> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/internal_data_6> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/internal_data_5> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/internal_data_4> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/internal_data_3> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/internal_data_2> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/internal_data_1> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/internal_data_0> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/data_7> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/data_6> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/data_5> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/data_4> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/data_3> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/data_2> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/data_1> of sequential type is unconnected in block <LEDs>.
-WARNING:Xst:2677 - Node <driver0/data_0> of sequential type is unconnected in block <LEDs>.
 
 Optimizing unit <LEDs> ...
 
@@ -377,12 +366,18 @@ FlipFlop LEDs_8Bit_0 has been replicated 3 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
+Processing Unit <LEDs> :
+	Found 2-bit shift register for signal <spart0/receiver/receive_sig>.
+Unit <LEDs> processed.
+
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 91
- Flip-Flops                                            : 91
+# Registers                                            : 108
+ Flip-Flops                                            : 108
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
 
 =========================================================================
 
@@ -411,29 +406,32 @@ Design Statistics
 # IOs                              : 14
 
 Cell Usage :
-# BELS                             : 167
+# BELS                             : 198
 #      GND                         : 1
-#      INV                         : 20
+#      INV                         : 19
 #      LUT1                        : 1
-#      LUT2                        : 12
-#      LUT3                        : 16
-#      LUT4                        : 45
-#      LUT5                        : 16
-#      LUT6                        : 24
+#      LUT2                        : 11
+#      LUT3                        : 15
+#      LUT4                        : 55
+#      LUT5                        : 12
+#      LUT6                        : 52
 #      MUXCY                       : 15
 #      VCC                         : 1
 #      XORCY                       : 16
-# FlipFlops/Latches                : 91
-#      FD                          : 23
+# FlipFlops/Latches                : 109
+#      FD                          : 22
+#      FDE                         : 1
 #      FDP                         : 4
-#      FDR                         : 16
-#      FDRE                        : 31
-#      FDRSE                       : 3
-#      FDSE                        : 14
+#      FDR                         : 28
+#      FDRE                        : 42
+#      FDRSE                       : 2
+#      FDSE                        : 10
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 11
-#      IBUF                        : 2
+# IO Buffers                       : 13
+#      IBUF                        : 4
 #      OBUF                        : 9
 =========================================================================
 
@@ -444,20 +442,22 @@ Selected Device : 5vlx110tff1136-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              87  out of  69120     0%  
- Number of Slice LUTs:                  134  out of  69120     0%  
-    Number used as Logic:               134  out of  69120     0%  
+ Number of Slice Registers:             105  out of  69120     0%  
+ Number of Slice LUTs:                  166  out of  69120     0%  
+    Number used as Logic:               165  out of  69120     0%  
+    Number used as Memory:                1  out of  17920     0%  
+       Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    143
-   Number with an unused Flip Flop:      56  out of    143    39%  
-   Number with an unused LUT:             9  out of    143     6%  
-   Number of fully used LUT-FF pairs:    78  out of    143    54%  
+ Number of LUT Flip Flop pairs used:    175
+   Number with an unused Flip Flop:      70  out of    175    40%  
+   Number with an unused LUT:             9  out of    175     5%  
+   Number of fully used LUT-FF pairs:    96  out of    175    54%  
    Number of unique control sets:        31
 
 IO Utilization: 
  Number of IOs:                          14
- Number of bonded IOBs:                  12  out of    640     1%  
+ Number of bonded IOBs:                  14  out of    640     2%  
     IOB Flip Flops/Latches:               4
 
 Specific Feature Utilization:
@@ -484,7 +484,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 91    |
+clk                                | BUFGP                  | 110   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -500,7 +500,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 2.811ns (Maximum Frequency: 355.783MHz)
-   Minimum input arrival time before clock: 2.452ns
+   Minimum input arrival time before clock: 2.447ns
    Maximum output required time after clock: 2.775ns
    Maximum combinational path delay: No path found
 
@@ -511,61 +511,61 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 2.811ns (frequency: 355.783MHz)
-  Total number of paths / destination ports: 1426 / 166
+  Total number of paths / destination ports: 1751 / 182
 -------------------------------------------------------------------------
 Delay:               2.811ns (Levels of Logic = 3)
-  Source:            spart0/d1/shift_reg_4 (FF)
-  Destination:       spart0/d1/t_enable (FF)
+  Source:            spart0/baud_count/shift_reg_4 (FF)
+  Destination:       spart0/baud_count/t_enable (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: spart0/d1/shift_reg_4 to spart0/d1/t_enable
+  Data Path: spart0/baud_count/shift_reg_4 to spart0/baud_count/t_enable
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.396   0.854  spart0/d1/shift_reg_4 (spart0/d1/shift_reg_4)
-     LUT6:I0->O            2   0.086   0.440  spart0/d1/shift_reg_cmp_eq0000108_SW0 (N13)
-     LUT6:I4->O           23   0.086   0.443  spart0/d1/shift_reg_cmp_eq0000108 (spart0/d1/shift_reg_cmp_eq0000)
-     LUT6:I5->O            1   0.086   0.235  spart0/d1/t_enable_not0001 (spart0/d1/t_enable_not0001)
-     FDRE:CE                   0.185          spart0/d1/t_enable
+     FDR:C->Q              2   0.396   0.854  spart0/baud_count/shift_reg_4 (spart0/baud_count/shift_reg_4)
+     LUT6:I0->O            2   0.086   0.440  spart0/baud_count/shift_reg_cmp_eq0000108_SW0 (N26)
+     LUT6:I4->O           23   0.086   0.443  spart0/baud_count/shift_reg_cmp_eq0000108 (spart0/baud_count/shift_reg_cmp_eq0000)
+     LUT6:I5->O            1   0.086   0.235  spart0/baud_count/t_enable_not0001 (spart0/baud_count/t_enable_not0001)
+     FDRE:CE                   0.185          spart0/baud_count/t_enable
     ----------------------------------------
     Total                      2.811ns (0.839ns logic, 1.972ns route)
                                        (29.9% logic, 70.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 89 / 89
+  Total number of paths / destination ports: 121 / 115
 -------------------------------------------------------------------------
-Offset:              2.452ns (Levels of Logic = 2)
+Offset:              2.447ns (Levels of Logic = 2)
   Source:            RST (PAD)
-  Destination:       spart0/r/zcnt_3 (FF)
+  Destination:       spart0/receiver/bitcnt_3 (FF)
   Destination Clock: clk rising
 
-  Data Path: RST to spart0/r/zcnt_3
+  Data Path: RST to spart0/receiver/bitcnt_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            52   0.694   0.942  RST_IBUF (RST_IBUF)
-     LUT6:I0->O            8   0.086   0.262  spart0/r/i_or00001 (spart0/r/i_or0000)
-     FDSE:S                    0.468          spart0/r/i_0
+     IBUF:I->O            77   0.694   0.945  RST_IBUF (RST_IBUF)
+     LUT6:I0->O            6   0.086   0.254  spart0/receiver/rda_or00001 (spart0/receiver/rda_or0000)
+     FDRE:R                    0.468          spart0/receiver/rda
     ----------------------------------------
-    Total                      2.452ns (1.248ns logic, 1.204ns route)
-                                       (50.9% logic, 49.1% route)
+    Total                      2.447ns (1.248ns logic, 1.199ns route)
+                                       (51.0% logic, 49.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
 Offset:              2.775ns (Levels of Logic = 1)
-  Source:            spart0/t1/t_shift_reg_0 (FF)
+  Source:            spart0/trans/t_shift_reg_0 (FF)
   Destination:       txd (PAD)
   Source Clock:      clk rising
 
-  Data Path: spart0/t1/t_shift_reg_0 to txd
+  Data Path: spart0/trans/t_shift_reg_0 to txd
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDSE:C->Q             1   0.396   0.235  spart0/t1/t_shift_reg_0 (spart0/t1/t_shift_reg_0)
+     FDSE:C->Q             1   0.396   0.235  spart0/trans/t_shift_reg_0 (spart0/trans/t_shift_reg_0)
      OBUF:I->O                 2.144          txd_OBUF (txd)
     ----------------------------------------
     Total                      2.775ns (2.540ns logic, 0.235ns route)
@@ -574,14 +574,14 @@ Offset:              2.775ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.35 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.21 secs
  
 --> 
 
-Total memory usage is 282572 kilobytes
+Total memory usage is 282316 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   30 (   0 filtered)
+Number of warnings :   16 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 
