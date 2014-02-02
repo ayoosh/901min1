@@ -9,7 +9,7 @@ module receiver(
 			);
 
 	reg [4:0]samplescnt;	// keep track of samples
-	reg [3:0]zcnt; 		// number of zeroes in current bit samples
+	reg [4:0]zcnt; 		// number of zeroes in current bit samples
 	reg start; 				// have we confirmed the start bit
 	reg misery; 			// are we potentially sampling for the start bit
 	reg [3:0]bitcnt;		// keep track of bits received of the final byte
@@ -60,7 +60,7 @@ module receiver(
 			
 			// This block syncs with system clock
 			else if (samplescnt == 5'd16) begin
-				if (zcnt > 4'd8) begin
+				if (zcnt > 5'd8) begin
 					start <= 1;
 				end
 					samplescnt <= 0;
@@ -79,8 +79,8 @@ module receiver(
 			end
 			
 			// System clock
-			else if (samplescnt >= 5'd16 && bitcnt < 4'h8) begin
-				if (zcnt > 4'd8) begin
+			else if (samplescnt == 5'd16 && bitcnt < 4'h8) begin // samplescnt > 5'd16 should not happen ever
+				if (zcnt > 5'd8) begin
 					data[bitcnt] <= 0;
 				end
 				else begin
