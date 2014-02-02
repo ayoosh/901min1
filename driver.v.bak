@@ -38,6 +38,7 @@ always@(posedge clk) begin
 		ready_for_data <= 0;
 	end
 	
+	// Strict order. Send lower byte of baud rate first.
 	else if (baud_done == 0) begin
 		if (ioaddr == 2'b00) begin
 			iocs <= 1;
@@ -69,6 +70,7 @@ always@(posedge clk) begin
 		end
 	end
 
+	// If have data to send, Transmit.
 	else if (tbr == 1 && have_data == 1) begin
 		iocs <= 1;
 		iorw <= 0;
@@ -77,6 +79,7 @@ always@(posedge clk) begin
 		have_data <= 0;
 	end
 	
+	// If no data to send, wait for rda, then receive data
 	else if (have_data == 0 && rda == 1) begin
 		if (ready_for_data == 0) begin
 			iocs <= 1;
@@ -92,6 +95,7 @@ always@(posedge clk) begin
 		end
 	end
 
+	// No data to send, rda is low. Time to be lazy.
 	else begin
 	   iocs <= 1'b0; // Sanity keep iocs to 0 if nothing to do
    end
