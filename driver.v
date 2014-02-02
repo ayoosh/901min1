@@ -22,12 +22,10 @@ module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output 
 
 reg [7:0]data;
 assign databus = ((iorw == 1'b0) ? data : 8'hzz);
-reg baud_done;
-reg [7:0]i;
-reg flag;
-reg [7:0]internal_data;
-reg have_data;
-reg ready_for_data;
+reg baud_done;			// Done with sending baud rate configuration.
+reg [7:0]internal_data;	// Internal storage to keep data to be echoed.
+reg have_data;			// Do we have data to send. If yes send to spart to transmit
+reg ready_for_data;		// rda is high for many clock cycles. So this becomes the flag to differentiate if we have asserted control signals to read data in next clock cycle.
 always@(posedge clk) begin
 	if (rst) begin
 		iocs <= 0;
@@ -35,13 +33,12 @@ always@(posedge clk) begin
 		ioaddr <= 2'b00;
 		data <= 0;
 		baud_done <= 0;
-		i <= 8'h07;
-		flag <= 1'b1;
 		internal_data <= 0;
 		have_data <= 0;
 		ready_for_data <= 0;
 	end
 	
+	// Strict order. Send lower byte of baud rate first.
 	else if (baud_done == 0) begin
 		if (ioaddr == 2'b00) begin
 			iocs <= 1;
@@ -73,6 +70,7 @@ always@(posedge clk) begin
 		end
 	end
 
+	// If have data to send, Transmit.
 	else if (tbr == 1 && have_data == 1) begin
 		iocs <= 1;
 		iorw <= 0;
@@ -81,6 +79,7 @@ always@(posedge clk) begin
 		have_data <= 0;
 	end
 	
+	// If no data to send, wait for rda, then receive data
 	else if (have_data == 0 && rda == 1) begin
 		if (ready_for_data == 0) begin
 			iocs <= 1;
@@ -96,6 +95,7 @@ always@(posedge clk) begin
 		end
 	end
 
+	// No data to send, rda is low. Time to be lazy.
 	else begin
 	   iocs <= 1'b0; // Sanity keep iocs to 0 if nothing to do
    end

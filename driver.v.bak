@@ -22,12 +22,10 @@ module driver(input clk, input rst, input [1:0] br_cfg, output reg iocs, output 
 
 reg [7:0]data;
 assign databus = ((iorw == 1'b0) ? data : 8'hzz);
-reg baud_done;
-reg [7:0]i;
-reg flag;
-reg [7:0]internal_data;
-reg have_data;
-reg ready_for_data;
+reg baud_done;			// Done with sending baud rate configuration.
+reg [7:0]internal_data;	// Internal storage to keep data to be echoed.
+reg have_data;			// Do we have data to send. If yes send to spart to transmit
+reg ready_for_data;		// rda is high for many clock cycles. So this becomes the flag to differentiate if we have asserted control signals to read data in next clock cycle.
 always@(posedge clk) begin
 	if (rst) begin
 		iocs <= 0;
@@ -35,8 +33,6 @@ always@(posedge clk) begin
 		ioaddr <= 2'b00;
 		data <= 0;
 		baud_done <= 0;
-		i <= 8'h07;
-		flag <= 1'b1;
 		internal_data <= 0;
 		have_data <= 0;
 		ready_for_data <= 0;
@@ -48,13 +44,13 @@ always@(posedge clk) begin
 			ioaddr <= 2'b10;
 			iorw <= 0;
 			if (br_cfg == 2'b00)
-				data <= 8'h16;
+				data <= 8'h15;
 			if (br_cfg == 2'b01)
-				data <= 8'h8b;
+				data <= 8'h8a;
 			if (br_cfg == 2'b10)
-				data <= 8'h46;
+				data <= 8'h45;
 			if (br_cfg == 2'b11)
-				data <= 8'ha3;
+				data <= 8'ha2;
 		end
 
 		else if (ioaddr == 2'b10) begin
@@ -89,7 +85,7 @@ always@(posedge clk) begin
 			ready_for_data <= 1;
 		end
 		else if (ready_for_data == 1) begin
-			internal_data <= data;
+			internal_data <= databus;
 			have_data <= 1'b1;
 			ready_for_data <= 1'b0;
 			iocs <= 1'b0;
